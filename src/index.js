@@ -22,7 +22,7 @@ root.render(
           <Route path='/api' element={<Appdashboard />} />
           <Route path='/api/profil' element={<Profil />} />
           <Route path='/login' element={<Signin />} />
-          <Route path='/home' element={<Home />} />
+          <Route path='/' element={<Home />} />
           <Route path='/authentification' element={<Signup />} />
           {/* <Route path='*' element={<Redirect />} /> */}
         </Routes>
