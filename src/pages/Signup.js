@@ -17,7 +17,7 @@ const Signup = () => {
             email: email,
             password: password
         }
-        axios.post('https://audiblehorizons-api.onrender.comregister', registerData)
+        axios.post('https://audible-horizons-backend.onrender.com/register', registerData)
         .then(res => {
             res = res.data
             if(res.registerOk){

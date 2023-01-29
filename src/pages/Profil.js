@@ -19,7 +19,7 @@ const Profil = (props) => {
     const navigate = useNavigate()
 
     useEffect(()=>{
-        axios.get('https://audiblehorizons-api.onrender.comapi/getdata', {
+        axios.get('https://audible-horizons-backend.onrender.com/api/getdata', {
             params:{
             token: localStorage.getItem('token')
         }}).then(response => {
@@ -51,7 +51,7 @@ const Profil = (props) => {
     const deleteAccount = ()=> {
         const profilRef = ref(storage, `profilImages/${props.id}`)
         deleteObject(profilRef)
-        axios.get('https://audiblehorizons-api.onrender.comapi/deleteaccount',  {
+        axios.get('https://audible-horizons-backend.onrender.com/api/deleteaccount',  {
             params:{
                 token: localStorage.getItem('token')
             }
@@ -128,7 +128,7 @@ const Profil = (props) => {
                 newData.push(tmp)
             }
         }
-        axios.post('https://audiblehorizons-api.onrender.comapi/editprofil', {newData : newData, token : localStorage.getItem('token')})
+        axios.post('https://audible-horizons-backend.onrender.com/api/editprofil', {newData : newData, token : localStorage.getItem('token')})
         .then(res => {
             res = res.data
             if(res.edited){

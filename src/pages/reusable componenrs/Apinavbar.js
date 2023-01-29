@@ -17,7 +17,7 @@ const Apinavbar = (props) => {
     const imagesListRef = ref(storage, 'profilImages/')
 
     useEffect(()=>{
-        axios.get('https://audiblehorizons-api.onrender.comapi/getdata',{
+        axios.get('https://audible-horizons-backend.onrender.com/api/getdata',{
             params:{
                 token: localStorage.getItem('token')
             }

@@ -10,7 +10,7 @@ const Signin = () => {
         ()=>{
             let token = localStorage.getItem('token')
             if(token !== null){
-                axios.get('https://audiblehorizons-api.onrender.comverifybeforelogin', {params: {token : token}})
+                axios.get('https://audible-horizons-backend.onrender.com/verifybeforelogin', {params: {token : token}})
                 .then((res)=>{
                     res= res.data
                     if(res.success === false){
@@ -30,7 +30,7 @@ const Signin = () => {
             email: email,
             password: password
         }
-        axios.post('https://audiblehorizons-api.onrender.comlogin', loginData)
+        axios.post('https://audible-horizons-backend.onrender.com/login', loginData)
         .then(res => {
             res = res.data
             if(res.loginOk){
