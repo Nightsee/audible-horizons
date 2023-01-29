@@ -19,7 +19,8 @@ const Navbar = () => {
             <div class="md:flex justify-end h-16 pt-[16px] xsm:hidden">
                 <ul class="list-none flex flex-row items-center w-96 justify-evenly">
                     <Link to="/home"><spans className="font-medium">Home</spans></Link>
-                    <Link to='/about'>About</Link>
+                    {/* <Link to='/about'>About</Link> */}
+                    <li><a href='#'>About</a></li>
                     <li><a href='#pricing'>Pricing</a></li>
                     <li><a href='#contact'>Contact</a></li>
                     <Link to='/authentification'>Sign up</Link>

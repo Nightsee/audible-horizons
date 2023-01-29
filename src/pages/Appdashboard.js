@@ -79,12 +79,12 @@ const Appdashboard = (props) => {
             pages: data.number_of_pages_median,
             token: localStorage.getItem('token')
         }
-        axios.post('http://localhost:4000/api/addtofav', tmp)
+        axios.post('https://audiblehorizons-api.onrender.comapi/addtofav', tmp)
         props.addtofavorites(tmp)
         setfavlist(props.favorites)
     }
     const removefromfav = (data) => {
-        axios.post('http://localhost:4000/api/removefromfav', {cover_i: data , token: localStorage.getItem('token')})
+        axios.post('https://audiblehorizons-api.onrender.comapi/removefromfav', {cover_i: data , token: localStorage.getItem('token')})
         setfavchanged(!favchanged)
         props.removefromfavorites(data)
         setfavlist(props.favorites)
@@ -119,7 +119,7 @@ const Appdashboard = (props) => {
         setcardclicked(!cardclicked)
     }
     const Logout = () => {
-        axios.get('http://localhost:4000/api/logout', {
+        axios.get('https://audiblehorizons-api.onrender.comapi/logout', {
             params:{
                 token: localStorage.getItem('token')
             }

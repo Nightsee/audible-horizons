@@ -10,7 +10,7 @@ const Signin = () => {
         ()=>{
             let token = localStorage.getItem('token')
             if(token !== null){
-                axios.get('http://localhost:4000/verifybeforelogin', {params: {token : token}})
+                axios.get('https://audiblehorizons-api.onrender.comverifybeforelogin', {params: {token : token}})
                 .then((res)=>{
                     res= res.data
                     if(res.success === false){
@@ -30,7 +30,7 @@ const Signin = () => {
             email: email,
             password: password
         }
-        axios.post('http://localhost:4000/login', loginData)
+        axios.post('https://audiblehorizons-api.onrender.comlogin', loginData)
         .then(res => {
             res = res.data
             if(res.loginOk){
@@ -45,10 +45,10 @@ const Signin = () => {
 
     return(<>
         <div className="xsm:w-screen h-screen xsm:p-2 z-[-4] bg-primary text-white overflow-x-hidden sm:overflow-y-scroll md:overflow-y-hidden">
-            <div className="w-fit mx-auto relative xsm:-top-5 xsm:h-[130px] lg:max-w-[90%] lg:hidden hover:cursor-pointer" onClick={() => navigate('/home')}>
+            <div className="w-fit mx-auto relative xsm:-top-5 xsm:h-[130px] lg:max-w-[90%] lg:hidden hover:cursor-pointer" onClick={() => navigate('/')}>
                 <img src={require('../Assets/Audible (1).png')} alt="logo" className='xsm:w-[160px] xsm:object-contain'/>
             </div>
-            <div className='xsm:hidden lg:block lg:max-w-[1024px] lg:relative lg:-top-9 mx-auto flex flex-row justify-start px-24 hover:cursor-pointer' onClick={() => navigate('/home')} >
+            <div className='xsm:hidden lg:block lg:max-w-[1024px] lg:relative lg:-top-9 mx-auto flex flex-row justify-start px-24 hover:cursor-pointer' onClick={() => navigate('/')} >
             <img src={require('../Assets/Audible (1).png')} alt="logo" className='sm:w-[160px]'/>
             </div>
             <div className="relative">

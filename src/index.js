@@ -11,6 +11,9 @@ import {createStore} from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './Reducer';
 import Profil from './pages/Profil';
+import {disableReactDevTools} from '@fvilers/disable-react-devtools'
+
+if(process.env.NODE_ENV === "production"){ disableReactDevTools() }
 
 const store = createStore(reducer)
 
