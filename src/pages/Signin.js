@@ -34,7 +34,7 @@ const Signin = () => {
         .then(res => {
             res = res.data
             if(res.loginOk){
-                alert('logged in')
+//                 alert('logged in')
                 localStorage.setItem('token', res.token)
                 navigate('/api')
             }else{
