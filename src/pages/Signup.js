@@ -21,7 +21,7 @@ const Signup = () => {
         .then(res => {
             res = res.data
             if(res.registerOk){
-                alert('account created')
+//                 alert('account created')
                 navigate('/login')
             }else{
                 alert('problem : ' + res.prob)
